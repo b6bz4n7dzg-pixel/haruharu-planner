@@ -1,0 +1,10 @@
+{
+  "name": "하루하루 플래너",
+  "short_name": "하루하루",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f7f7f5",
+  "theme_color": "#f7f7f5",
+  "lang": "ko",
+  "icons": []
+}
