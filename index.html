@@ -3,105 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f8f8f6">
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="home-icon-v2.png">
-<title>하루하루</title>
+<meta name="theme-color" content="#f7f7f5">
+<title>하루하루 2.0</title>
 <style>
-:root{--bg:#f7f7f5;--card:#fff;--text:#242424;--sub:#8a8a86;--line:#e9e9e5;--accent:#5f655d;--accent2:#eceee9;--danger:#b86b67}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
-button,input,textarea,select{font:inherit}button{cursor:pointer}.app{max-width:760px;margin:auto;padding:22px 16px 100px}
-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.brand{font-size:24px;font-weight:800;letter-spacing:-.8px}.date{font-size:12px;color:var(--sub);margin-top:3px}
-.iconbtn{width:38px;height:38px;border-radius:12px;background:#fff;border:1px solid var(--line)}
-.nav{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:4px;background:#ededeb;border-radius:15px;margin-bottom:14px}.nav button{border:0;background:transparent;padding:10px 4px;border-radius:11px;font-size:13px;color:#777}.nav button.on{background:#fff;color:var(--text);font-weight:750;box-shadow:0 1px 5px #00000008}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}.head{display:flex;justify-content:space-between;align-items:center;gap:10px}.title{font-size:16px;font-weight:750}.sub{font-size:12px;color:var(--sub);line-height:1.5}.btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 11px;font-size:12px}.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.progress{height:6px;background:#ededeb;border-radius:9px;overflow:hidden;margin-top:12px}.progress i{display:block;height:100%;background:var(--accent);border-radius:9px}
-.list{margin-top:9px}.item{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}.item:last-child{border-bottom:0}.check{width:21px;height:21px;border:1.5px solid #c8c8c3;border-radius:7px;background:#fff;flex:none}.check.done{background:var(--accent);border-color:var(--accent);color:#fff}.check.done:after{content:"✓";font-size:13px}.grow{flex:1}.strike{text-decoration:line-through;color:#aaa}.tag{display:inline-block;background:var(--accent2);color:#666;padding:3px 7px;border-radius:20px;font-size:10px;margin-top:4px}.empty{text-align:center;color:var(--sub);font-size:12px;padding:18px 0}
-.routine{display:grid;grid-template-columns:50px 21px 1fr auto;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid var(--line)}.routine:last-child{border:0}.time{font-size:11px;color:var(--sub)}
-.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:12px}.dow{text-align:center;color:var(--sub);font-size:10px;padding:5px}.day{min-height:55px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:7px;font-size:11px}.day.today{border:2px solid var(--accent)}.day.sel{background:var(--accent2)}.dots{margin-top:5px;display:flex;gap:3px;flex-wrap:wrap}.dot{width:4px;height:4px;border-radius:50%;background:#777}
-.week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:12px}.wc{min-height:130px;border:1px solid var(--line);border-radius:10px;padding:7px;background:#fff;text-align:left;color:var(--text);font:inherit}.wc.selected{background:var(--accent2)}.wc.today{border:2px solid var(--accent)}.wday{text-align:center;color:var(--sub);font-size:10px}.wn{font-size:12px;font-weight:750;margin:5px 0}.mini{font-size:9px;background:var(--accent2);border-radius:5px;padding:4px;margin:3px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.goals{display:grid;gap:7px;margin-top:10px}.goal{display:flex;gap:8px;align-items:center;padding:8px 0}.goal input{flex:1;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:7px 2px;outline:none}
-.form{display:grid;gap:9px;margin-top:12px}.form input,.form textarea,.form select{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;background:#fff;outline:none}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.actions{display:flex;gap:8px;justify-content:flex-end;margin-top:4px}
-.sheetback{position:fixed;inset:0;background:#0005;display:flex;align-items:flex-end;z-index:20}.sheet{background:#fff;width:min(760px,100%);margin:auto;border-radius:22px 22px 0 0;padding:20px 18px calc(20px + env(safe-area-inset-bottom));max-height:90vh;overflow:auto}
-.hidden{display:none!important}.sectiongap{height:2px}
+:root{--bg:#f7f7f5;--card:#fff;--ink:#242424;--muted:#8a8a86;--line:#e9e9e5;--soft:#f0f0ed;--danger:#a44b4b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+button,input,select,textarea{font:inherit}button{border:0;cursor:pointer}.app{max-width:760px;margin:auto;padding:22px 18px calc(28px + env(safe-area-inset-bottom))}
+.top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}h1{font-size:28px;margin:0 0 4px}.date{font-size:13px;color:var(--muted)}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px}.tab,.pill,.ghost{background:var(--soft);color:#555;padding:10px 9px;border-radius:11px}.tab.active{background:var(--ink);color:#fff}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:17px;margin:12px 0;box-shadow:0 3px 16px #00000008}.row{display:flex;align-items:center;gap:9px}.between{justify-content:space-between}.title{font-weight:700;font-size:17px}.small,.hint{font-size:12px;color:var(--muted);line-height:1.5}
+.list{margin-top:9px}.item{display:flex;align-items:center;gap:9px;padding:11px 0;border-top:1px solid #f0f0ed}.item:first-child{border-top:0}.check{width:21px;height:21px;border:1px solid #bbb;border-radius:7px;background:white;flex:0 0 auto}.check.done{background:#333;border-color:#333;position:relative}.check.done:after{content:"✓";color:#fff;font-size:13px;position:absolute;left:4px;top:0}.doneText{text-decoration:line-through;color:#aaa}.grow{flex:1;min-width:0}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.primary{background:var(--ink);color:#fff;padding:10px 13px;border-radius:11px}.mini{font-size:11px;color:#888;background:#f2f2ef;padding:4px 7px;border-radius:999px}.defer{font-size:11px;background:#eee;padding:5px 7px;border-radius:8px}.important{font-size:11px}.modal{position:fixed;inset:0;background:#0005;display:flex;align-items:flex-end;z-index:5}.hidden{display:none}.sheet{width:100%;max-width:760px;margin:auto;background:#fff;border-radius:22px 22px 0 0;padding:18px 18px calc(22px + env(safe-area-inset-bottom));max-height:90vh;overflow:auto}.sheet h2{margin:0 0 12px;font-size:18px}.form input,.form select,.form textarea{width:100%;border:1px solid #ddd;border-radius:11px;padding:11px;margin:5px 0 8px;background:#fff}.form textarea{min-height:90px;resize:vertical}.tw{display:grid;grid-template-columns:1fr 1fr;gap:7px}.progress{height:7px;background:#eee;border-radius:99px;overflow:hidden;margin-top:9px}.bar{height:100%;background:#333;border-radius:99px}.sectionHead{display:flex;justify-content:space-between;align-items:center}.empty{padding:15px 0;color:#999;text-align:center;font-size:13px}.weeknav{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.weeknav button{background:var(--soft);border-radius:9px;padding:7px 10px}
+.auth{min-height:75vh;display:flex;align-items:center;justify-content:center}.auth .card{width:100%;max-width:480px}.status{font-size:12px;color:var(--muted);margin-top:7px}.error{color:var(--danger);font-size:12px;line-height:1.5;margin-top:8px}.loading{padding:30px;text-align:center;color:var(--muted)}
 </style>
 </head>
 <body>
-<div class="app">
-<header><div><div class="brand">하루하루</div><div class="date" id="dateText"></div></div><button class="iconbtn" id="todayBtn">오늘</button></header>
-<nav class="nav" id="nav">
-<button data-page="today">오늘</button><button data-page="week">주간</button><button data-page="month">월간</button><button data-page="settings">설정</button>
-</nav>
-<main id="view"></main>
-</div>
-<div id="modal" class="sheetback hidden"><div class="sheet"><div class="head"><b id="mTitle"></b><button class="iconbtn" id="close">×</button></div><div id="mBody"></div></div></div>
+<div id="root"></div>
+<div id="modal" class="modal hidden" onclick="if(event.target===this)closeModal()"><div class="sheet"><div class="row between"><h2 id="modalTitle">추가</h2><button class="ghost" onclick="closeModal()">닫기</button></div><div id="modalBody"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-"use strict";
-const KEY="haruharu_v3";
-const $=id=>document.getElementById(id);
-const today=new Date(); let selected=new Date(); let page="today"; let routineEditMode=false;
-let db=JSON.parse(localStorage.getItem(KEY)||"null")||{
- goals:[],
- tasks:[],
- routine:[
-  {id:1,time:"07:00",text:"기상 · 물 한 잔",done:false},
-  {id:2,time:"07:10",text:"세수 · 양치",done:false},
-  {id:3,time:"07:30",text:"가벼운 정리 / 스트레칭",done:false},
-  {id:4,time:"07:45",text:"아침 식사",done:false},
-  {id:5,time:"08:10",text:"오늘 계획 확인",done:false}
- ],
- notes:""
-};
-const save=()=>localStorage.setItem(KEY,JSON.stringify(db));
-const iso=d=>{let x=new Date(d);return `${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,"0")}-${String(x.getDate()).padStart(2,"0")}`};
-const fmt=d=>new Intl.DateTimeFormat("ko-KR",{year:"numeric",month:"long",day:"numeric",weekday:"long"}).format(d);
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
-function openModal(title,body){$("mTitle").textContent=title;$("mBody").innerHTML=body;$("modal").classList.remove("hidden")}
-function closeModal(){$("modal").classList.add("hidden")}
-function setPage(p){page=p;selected=new Date();routineEditMode=false;render()}
-function render(){ $("dateText").textContent=fmt(selected);document.querySelectorAll("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.page===page));$("view").innerHTML=page==="today"?todayPage():page==="week"?weekPage():page==="month"?monthPage():settingsPage()}
-function taskForm(date=""){
-openModal("할 일 추가",`<div class="form"><input id="tText" placeholder="예: 수학 기출 1회"><div class="two"><input id="tDate" type="date" value="${date}"><select id="tCat"><option>공부</option><option>일상</option><option>집안일</option><option>약속</option><option>기타</option></select></div><div class="sub">날짜를 비워두면 ‘미배치 할 일’로 저장돼요.</div><div class="actions"><button class="btn" id="cancel">취소</button><button class="btn primary" id="saveTask">추가</button></div></div>`);$("cancel").onclick=closeModal;$('saveTask').onclick=()=>{let text=$("tText").value.trim();if(!text)return;db.tasks.push({id:Date.now(),date:$("tDate").value||"",text,cat:$("tCat").value,done:false});save();closeModal();render()}}
-function taskEditForm(id){let x=db.tasks.find(v=>v.id===id);if(!x)return;openModal("할 일 수정",`<div class="form"><input id="tText" value="${esc(x.text)}"><div class="two"><input id="tDate" type="date" value="${esc(x.date||"")}"><select id="tCat"><option ${x.cat==="공부"?"selected":""}>공부</option><option ${x.cat==="일상"?"selected":""}>일상</option><option ${x.cat==="집안일"?"selected":""}>집안일</option><option ${x.cat==="약속"?"selected":""}>약속</option><option ${x.cat==="기타"?"selected":""}>기타</option></select></div><div class="sub">날짜를 비워두면 다시 ‘미배치 할 일’로 돌아가요.</div><div class="actions"><button class="btn" id="cancel">취소</button><button class="btn primary" id="saveTask">저장</button></div></div>`);$("cancel").onclick=closeModal;$('saveTask').onclick=()=>{let text=$("tText").value.trim();if(!text)return;x.text=text;x.date=$("tDate").value||"";x.cat=$("tCat").value;save();closeModal();render()}}
-function goalForm(){openModal("월간 목표 추가",`<div class="form"><input id="gText" placeholder="예: 확통 개념 완강"><div class="actions"><button class="btn" id="cancel">취소</button><button class="btn primary" id="saveGoal">추가</button></div></div>`);$("cancel").onclick=closeModal;$("saveGoal").onclick=()=>{let text=$("gText").value.trim();if(!text)return;db.goals.push({id:Date.now(),text,done:false});save();closeModal();render()}}
-function routineForm(){openModal("아침 루틴 추가",`<div class="form"><div class="two"><input id="rTime" type="time"><input id="rText" placeholder="루틴 내용"></div><div class="actions"><button class="btn" id="cancel">취소</button><button class="btn primary" id="saveRoutine">추가</button></div></div>`);$("cancel").onclick=closeModal;$("saveRoutine").onclick=()=>{let text=$("rText").value.trim();if(!text)return;db.routine.push({id:Date.now(),time:$("rTime").value||"",text,done:false});db.routine.sort((a,b)=>(a.time||"").localeCompare(b.time||""));save();closeModal();render()}}
-function routineEditForm(id){let x=db.routine.find(v=>v.id===id);if(!x)return;openModal("아침 루틴 수정",`<div class="form"><div class="two"><input id="rTime" type="time" value="${esc(x.time||"")}"><input id="rText" value="${esc(x.text)}" placeholder="루틴 내용"></div><div class="actions"><button class="btn" id="cancel">취소</button><button class="btn primary" id="saveRoutine">저장</button></div></div>`);$("cancel").onclick=closeModal;$("saveRoutine").onclick=()=>{let text=$("rText").value.trim();if(!text)return;x.time=$("rTime").value||"";x.text=text;db.routine.sort((a,b)=>(a.time||"").localeCompare(b.time||""));save();closeModal();render()}}
-function toggle(type,id){let a=db[type],x=a.find(v=>v.id===id);if(x)x.done=!x.done;save();render()}
-function del(type,id){db[type]=db[type].filter(x=>x.id!==id);save();render()}
-function taskList(date){let arr=db.tasks.filter(x=>x.date===date);return arr.length?arr.map(x=>`<div class="item"><button class="check ${x.done?"done":""}" data-toggle="tasks" data-id="${x.id}"></button><div class="grow"><div class="${x.done?"strike":""}">${esc(x.text)}</div><span class="tag">${esc(x.cat)}</span></div><button class="sub" data-del="tasks" data-id="${x.id}">삭제</button></div>`).join(""):`<div class="empty">오늘 할 일이 없어요. 하나만 추가해볼까요?</div>`}
-function todayPage(){let d=iso(selected),tasks=db.tasks.filter(x=>x.date===d),done=tasks.filter(x=>x.done).length,rDone=db.routine.filter(x=>x.done).length;return `
-<div class="card"><div class="head"><div><div class="title">${iso(selected)===iso(today)?"오늘":"선택한 날"}</div><div class="sub">${fmt(selected)}</div></div><button class="btn primary" id="addTask">+ 할 일</button></div><div class="progress"><i style="width:${tasks.length?done/tasks.length*100:0}%"></i></div><div class="sub" style="margin-top:7px">${done}/${tasks.length} 완료</div></div>
-<div class="card"><div class="head"><div><div class="title">☀️ 아침 루틴</div><div class="sub">${rDone}/${db.routine.length} 완료</div></div><div style="display:flex;gap:6px"><button class="btn" id="editRoutine">${routineEditMode?"완료":"편집"}</button><button class="btn" id="addRoutine">+ 루틴</button></div></div><div class="list">${db.routine.length?db.routine.map(x=>`<div class="routine"><span class="time">${esc(x.time||"")}</span><button class="check ${x.done?"done":""}" data-toggle="routine" data-id="${x.id}"></button><span class="${x.done?"strike":""}">${esc(x.text)}</span>${routineEditMode?`<span style="display:flex;gap:4px"><button class="sub" data-edit-routine="${x.id}">수정</button><button class="sub" data-del-routine="${x.id}">삭제</button></span>`:""}</div>`).join(""):`<div class="empty">아침 루틴을 추가해보세요.</div>`}</div></div>
-<div class="card"><div class="head"><div class="title">📌 오늘 할 일</div><span class="sub">${tasks.length}개</span></div><div class="list">${taskList(d)}</div></div>
-<div class="card"><div class="head"><div><div class="title">🎯 이번 달 목표</div><div class="sub">큰 목표는 여기, 실제 행동은 오늘 할 일에.</div></div><button class="btn" id="addGoal">+ 목표</button></div><div class="list">${db.goals.length?db.goals.map(x=>`<div class="item"><button class="check ${x.done?"done":""}" data-toggle="goals" data-id="${x.id}"></button><span class="${x.done?"strike":""} grow">${esc(x.text)}</span></div>`).join(""):`<div class="empty">이번 달 목표를 추가해보세요.</div>`}</div></div>`}
-function monday(d){let x=new Date(d);x.setHours(0,0,0,0);let day=x.getDay();x.setDate(x.getDate()-(day===0?6:day-1));return x}
-function inWeek(date,s){if(!date)return false;let d=new Date(date+"T12:00:00"),e=new Date(s);e.setDate(s.getDate()+6);e.setHours(23,59,59,999);return d>=s&&d<=e}
-function inMonth(date,y,m){if(!date)return false;let d=new Date(date+"T12:00:00");return d.getFullYear()===y&&d.getMonth()===m}
-function taskRows(arr,empty="할 일이 없어요."){return arr.length?arr.map(x=>`<div class="item"><button class="check ${x.done?"done":""}" data-toggle="tasks" data-id="${x.id}"></button><div class="grow"><div class="${x.done?"strike":""}">${esc(x.text)}</div><span class="tag">${esc(x.cat)}</span>${x.date?`<div class="sub" style="font-size:10px;margin-top:3px">${x.date}</div>`:""}</div><button class="sub" data-edit-task="${x.id}">편집</button></div>`).join(""):`<div class="empty">${empty}</div>`}
-function weekPage(){let s=monday(selected),weekEnd=new Date(s);weekEnd.setDate(s.getDate()+6);let cells="",names=["월","화","수","목","금","토","일"];for(let i=0;i<7;i++){let d=new Date(s);d.setDate(s.getDate()+i);let id=iso(d),ts=db.tasks.filter(x=>x.date===id);cells+=`<button class="wc ${id===iso(today)?"today":""} ${id===iso(selected)?"selected":""}" data-date="${id}"><div class="wday">${names[i]}</div><div class="wn">${d.getDate()}일</div>${ts.slice(0,5).map(x=>`<div class="mini">${x.done?"✓ ":""}${esc(x.text)}</div>`).join("")}${ts.length>5?`<div class="sub" style="font-size:9px">+${ts.length-5}개 더</div>`:""}</button>`}let wt=db.tasks.filter(x=>inWeek(x.date,s)),un=db.tasks.filter(x=>!x.date);return `<div class="card"><div class="head"><div><div class="title">🗓️ 이번 주</div><div class="sub">${iso(s)} ~ ${iso(weekEnd)}</div></div><button class="btn primary" id="addWeekTask">+ 이번 주 할 일</button></div><div class="week">${cells}</div></div><div class="card"><div class="head"><div><div class="title">📌 이번 주 할 일</div><div class="sub">총 ${wt.length}개 · 날짜를 정하면 캘린더에 배치돼요.</div></div></div><div class="list">${taskRows(wt,"이번 주에 잡힌 할 일이 없어요.")}</div></div><div class="card"><div class="head"><div><div class="title">📥 미배치 할 일</div><div class="sub">아직 날짜를 정하지 않은 일</div></div><button class="btn" id="addUnscheduled">+ 추가</button></div><div class="list">${taskRows(un,"미배치된 일이 없어요.")}</div></div>`}
-function monthPage(){let y=selected.getFullYear(),m=selected.getMonth(),first=new Date(y,m,1),last=new Date(y,m+1,0),off=(first.getDay()+6)%7,days="";for(let i=0;i<off;i++)days+="<div></div>";for(let n=1;n<=last.getDate();n++){let d=new Date(y,m,n),id=iso(d),ts=db.tasks.filter(x=>x.date===id);days+=`<button class="day ${id===iso(today)?"today":""} ${id===iso(selected)?"sel":""}" data-date="${id}"><b>${n}</b><div class="dots">${ts.slice(0,5).map(()=>'<i class="dot"></i>').join("")}</div></button>`}let mt=db.tasks.filter(x=>inMonth(x.date,y,m)),un=db.tasks.filter(x=>!x.date);return `<div class="card"><div class="head"><div><div class="title">📅 ${y}년 ${m+1}월</div><div class="sub">날짜를 누르면 그날의 계획으로 이동해요.</div></div><button class="btn primary" id="addMonthTask">+ 이번 달 할 일</button></div><div class="calendar">${["월","화","수","목","금","토","일"].map(x=>`<div class="dow">${x}</div>`).join("")}${days}</div></div><div class="card"><div class="head"><div><div class="title">📌 이번 달 할 일</div><div class="sub">총 ${mt.length}개 · 날짜별로 배치된 일</div></div></div><div class="list">${taskRows(mt,"이번 달에 잡힌 할 일이 없어요.")}</div></div><div class="card"><div class="head"><div><div class="title">📥 미배치 할 일</div><div class="sub">날짜를 정해 원하는 날에 배치해보세요.</div></div><button class="btn" id="addUnscheduled">+ 추가</button></div><div class="list">${taskRows(un,"미배치된 일이 없어요.")}</div></div><div class="card"><div class="head"><div><div class="title">🎯 이달의 목표</div><button class="btn" id="addGoal">+ 목표</button></div></div><div class="list">${db.goals.length?db.goals.map(x=>`<div class="item"><button class="check ${x.done?"done":""}" data-toggle="goals" data-id="${x.id}"></button><span class="${x.done?"strike":""} grow">${esc(x.text)}</span></div>`).join(""):`<div class="empty">아직 목표가 없어요.</div>`}</div></div>`}
-function settingsPage(){return `<div class="card"><div class="title">⚙️ 설정</div><div class="sub" style="margin-top:8px">계획과 체크 상태는 이 기기의 브라우저에 저장됩니다.</div><div class="actions"><button class="btn" id="reset">전체 초기화</button></div></div><div class="card"><div class="title">📝 메모</div><textarea id="notes" placeholder="자유롭게 적어두세요.">${esc(db.notes)}</textarea><div class="actions"><button class="btn primary" id="saveNotes">저장</button></div></div>`}
-$("nav").onclick=e=>{let b=e.target.closest("button[data-page]");if(b)setPage(b.dataset.page)}
-$("todayBtn").onclick=()=>setPage("today");$("close").onclick=closeModal;$("modal").onclick=e=>{if(e.target===$("modal"))closeModal()}
-$("view").addEventListener("click",e=>{
- let t=e.target.closest("[data-toggle]");if(t)toggle(t.dataset.toggle,Number(t.dataset.id));
- let d=e.target.closest("[data-del]");if(d)del(d.dataset.del,Number(d.dataset.id));
- let re=e.target.closest("[data-edit-routine]");if(re)routineEditForm(Number(re.dataset.editRoutine));
- let rd=e.target.closest("[data-del-routine]");if(rd&&confirm("이 아침 루틴을 삭제할까요?")){db.routine=db.routine.filter(x=>x.id!==Number(rd.dataset.delRoutine));save();render()}
- let date=e.target.closest("[data-date]");if(date){selected=new Date(date.dataset.date+"T12:00:00");page="today";render()}
- if(e.target.id==="addTask")taskForm(iso(selected));
- if(e.target.id==="addWeekTask")taskForm(iso(selected));
- if(e.target.id==="addMonthTask")taskForm(iso(selected));
- if(e.target.id==="addUnscheduled")taskForm("");
- if(e.target.id==="addGoal")goalForm();
- if(e.target.id==="addRoutine")routineForm();
- let et=e.target.closest("[data-edit-task]");if(et)taskEditForm(Number(et.dataset.editTask));
- if(e.target.id==="editRoutine"){routineEditMode=!routineEditMode;render()}
- if(e.target.id==="reset"&&confirm("모든 계획을 초기화할까요?")){localStorage.removeItem(KEY);location.reload()}
- if(e.target.id==="saveNotes"){db.notes=$("notes").value;save()}
-});
-render();
-if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+const SUPABASE_URL='https://vuawbraztecspgmjmnkb.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_daGbnJPQ4lswaEXGzYiUEg_RMbilzaf';
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+
+const pad=n=>String(n).padStart(2,'0');
+const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const koDate=d=>new Intl.DateTimeFormat('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'short'}).format(d);
+const addDays=(d,n)=>{let x=new Date(d);x.setDate(x.getDate()+n);return x};
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+let user=null;
+let data={daily:[],weekly:[],monthly:[],routine:[]};
+let routineDone={};
+const ROUTINE_DONE_KEY='haruharu_routine_done_v2';
+function routineDoneFor(date=iso(state.date)){let all=JSON.parse(localStorage.getItem(ROUTINE_DONE_KEY)||'{}');return all[date]||{};}
+function setRoutineDone(id,next,date=iso(state.date)){let all=JSON.parse(localStorage.getItem(ROUTINE_DONE_KEY)||'{}');all[date]=all[date]||{};all[date][id]=next;localStorage.setItem(ROUTINE_DONE_KEY,JSON.stringify(all));}
+let state={tab:'today',date:new Date(),weekOffset:0};
+
+function root(){return document.getElementById('root')}
+function openModal(title,body){document.getElementById('modalTitle').textContent=title;document.getElementById('modalBody').innerHTML=body;document.getElementById('modal').classList.remove('hidden')}
+function closeModal(){document.getElementById('modal').classList.add('hidden')}
+function pct(arr){return arr.length?Math.round(arr.filter(x=>x.done).length/arr.length*100):0}
+function progressCard(title,arr){let p=pct(arr);return `<div class="card"><div class="row between"><div class="title">${title}</div><span class="mini">${arr.filter(x=>x.done).length}/${arr.length}</span></div><div class="progress"><div class="bar" style="width:${p}%"></div></div></div>`}
+function itemHtml(x,type){
+ const defer=type==='daily'?`<button class="defer" onclick="deferTask('${x.id}')">↪ 내일</button>`:'';
+ const meta=x.defer_count?`<span class="mini">↪ ${x.defer_count}회 미룸</span>`:'';
+ const imp=x.priority&&x.priority!=='일반'?`<span class="important">${x.priority==='매우 중요'?'★★':'★'}</span>`:'';
+ return `<div class="item"><button class="check ${x.done?'done':''}" onclick="toggleTask('${type}','${x.id}',${!x.done})"></button><div class="grow"><div class="${x.done?'doneText':''}">${esc(x.text)} ${imp}</div><div>${meta} ${x.note?`<span class="mini">메모 있음</span>`:''}</div></div>${defer}<button class="mini" onclick="editItem('${type}','${x.id}')">수정</button><button class="mini" onclick="deleteItem('${type}','${x.id}')">삭제</button></div>`;
+}
+
+function shell(){return `<div class="app"><div class="top"><div><h1>하루하루</h1><div id="todayLabel" class="date"></div></div><button class="pill" onclick="goToday()">오늘</button></div><div class="tabs"><button class="tab ${state.tab==='today'?'active':''}" data-tab="today">오늘</button><button class="tab ${state.tab==='week'?'active':''}" data-tab="week">이번 주</button><button class="tab ${state.tab==='month'?'active':''}" data-tab="month">이번 달</button><button class="tab ${state.tab==='settings'?'active':''}" data-tab="settings">설정</button></div><main id="main"></main></div>`}
+
+function today(){
+ const id=iso(state.date), tasks=data.daily.filter(x=>x.date===id), routines=data.routine;
+ return `${progressCard('오늘의 할 일',tasks)}
+ <div class="card"><div class="sectionHead"><div><div class="title">☀️ 아침 루틴</div><div class="small">매일 반복되는 루틴은 여기서 따로 관리해요.</div></div><button class="pill" onclick="addRoutine()">+ 추가</button></div>
+ <div class="list">${routines.length?routines.map(r=>{const done=!!routineDone[r.id];return `<div class="item"><button class="check ${done?'done':''}" onclick="toggleRoutine('${r.id}',${!done})"></button><div class="grow"><span class="${done?'doneText':''}">${esc(r.text)}</span><div class="small">${esc(r.time)}</div></div></div>`}).join(''):'<div class="empty">아침 루틴을 추가해보세요.</div>'}</div></div>
+ <div class="card"><div class="sectionHead"><div class="title">📝 오늘 할 일</div><button class="primary" onclick="addItem('daily')">+ 추가</button></div><div class="list">${tasks.length?tasks.map(x=>itemHtml(x,'daily')).join(''):'<div class="empty">오늘 할 일을 추가해보세요.</div>'}</div></div>`;
+}
+function weekRange(){let d=addDays(new Date(),state.weekOffset*7);let day=(d.getDay()+6)%7;let mon=addDays(d,-day);return [mon,addDays(mon,6)]}
+function week(){let [a,b]=weekRange(), w=data.weekly.filter(x=>x.week_start===iso(a));return `<div class="card"><div class="weeknav"><button onclick="state.weekOffset--;loadData()">‹</button><div><div class="title">이번 주</div><div class="small">${koDate(a)} ~ ${koDate(b)}</div></div><button onclick="state.weekOffset++;loadData()">›</button></div></div>${progressCard('이번 주 진행률',w)}<div class="card"><div class="sectionHead"><div class="title">📌 이번 주 할 일</div><button class="primary" onclick="addItem('weekly')">+ 추가</button></div><div class="list">${w.length?w.map(x=>itemHtml(x,'weekly')).join(''):'<div class="empty">이번 주에 해야 할 일을 따로 적어보세요.</div>'}</div></div>`}
+function month(){let d=state.date,y=d.getFullYear(),m=d.getMonth(), key=`${y}-${pad(m+1)}-01`,items=data.monthly.filter(x=>x.month_start===key);return `<div class="card"><div class="sectionHead"><div><div class="title">📅 ${y}년 ${m+1}월</div><div class="small">이번 달의 큰 할 일을 일간·주간과 별도로 관리해요.</div></div><button class="primary" onclick="addItem('monthly')">+ 추가</button></div></div>${progressCard('이번 달 진행률',items)}<div class="card"><div class="list">${items.length?items.map(x=>itemHtml(x,'monthly')).join(''):'<div class="empty">이번 달 할 일을 추가해보세요.</div>'}</div></div>`}
+function settings(){return `<div class="card"><div class="title">⚙️ 설정</div><div class="small" style="margin-top:7px">☁️ Supabase에 연결된 버전이에요. 같은 계정으로 로그인하면 Safari에서 열어도 계획이 이어집니다.</div><div class="status">로그인: ${esc(user?.email||'')}</div><div class="actions"><button class="ghost" onclick="signOut()">로그아웃</button></div></div><div class="card"><div class="title">미루기</div><div class="small" style="margin-top:7px">오늘 할 일의 ↪ 내일 버튼을 누르면 다음 날로 이동하고 미룬 횟수가 +1 됩니다.</div></div>`}
+
+function authView(msg=''){root().innerHTML=`<div class="app"><div class="auth"><div class="card"><h1>하루하루</h1><div class="small">내 계획을 안전하게 저장해요.</div><div class="form" style="margin-top:14px"><input id="authEmail" type="email" placeholder="이메일"><input id="authPassword" type="password" placeholder="비밀번호"><div class="actions"><button class="primary" onclick="signIn()">로그인</button></div>${msg?`<div class="error">${esc(msg)}</div>`:''}</div></div></div></div>`}
+
+async function signIn(){const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;if(!email||!password)return authView('이메일과 비밀번호를 입력해주세요.');const {error}=await sb.auth.signInWithPassword({email,password});if(error)return authView(error.message);await start()}
+async function signOut(){await sb.auth.signOut();user=null;authView()}
+
+async function loadData(){
+ if(!user)return;
+ routineDone=routineDoneFor();
+ const [d,w,m,r]=await Promise.all([
+   sb.from('tasks').select('*').eq('user_id',user.id).eq('type','daily'),
+   sb.from('tasks').select('*').eq('user_id',user.id).eq('type','weekly'),
+   sb.from('tasks').select('*').eq('user_id',user.id).eq('type','monthly'),
+   sb.from('routines').select('*').eq('user_id',user.id).order('sort_order',{ascending:true}).order('created_at',{ascending:true})
+ ]);
+ const errors=[d,w,m,r].filter(x=>x.error);if(errors.length){console.error(errors);root().innerHTML=shell();document.getElementById('main').innerHTML=`<div class="card"><div class="title">데이터를 불러오지 못했어요.</div><div class="error">${esc(errors[0].error.message)}</div></div>`;return}
+ data={daily:d.data||[],weekly:w.data||[],monthly:m.data||[],routine:r.data||[]};render();
+}
+function render(){root().innerHTML=shell();document.getElementById('todayLabel').textContent=koDate(state.date);document.getElementById('main').innerHTML=state.tab==='today'?today():state.tab==='week'?week():state.tab==='month'?month():settings();document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{state.tab=b.dataset.tab;state.date=new Date();state.weekOffset=0;loadData()})}
+
+function addItem(type,existing){let isD=type==='daily',x=existing, title=x?'할 일 수정':type==='weekly'?'이번 주 할 일 추가':type==='monthly'?'이번 달 할 일 추가':'오늘 할 일 추가';let defaultDate=x?.date||iso(state.date);openModal(title,`<div class="form"><input id="fText" placeholder="할 일을 적어주세요" value="${x?esc(x.text):''}">${isD?`<input id="fDate" type="date" value="${defaultDate}">`:''}<select id="fPri"><option ${!x||x.priority==='일반'?'selected':''}>일반</option><option ${x?.priority==='중요'?'selected':''}>중요</option><option ${x?.priority==='매우 중요'?'selected':''}>매우 중요</option></select><textarea id="fNote" placeholder="메모 (선택)">${x?esc(x.note||''):''}</textarea><div class="actions"><button class="primary" onclick="saveItem('${type}','${x?.id||''}')">${x?'저장':'추가'}</button><button class="ghost" onclick="closeModal()">취소</button></div></div>`)}
+async function saveItem(type,id){let text=document.getElementById('fText').value.trim();if(!text)return;let payload={user_id:user.id,type,text,done:false,priority:document.getElementById('fPri').value,note:document.getElementById('fNote').value.trim(),updated_at:new Date().toISOString()};if(type==='daily')payload.date=document.getElementById('fDate').value||iso(state.date);if(type==='weekly')payload.week_start=iso(weekRange()[0]);if(type==='monthly')payload.month_start=`${state.date.getFullYear()}-${pad(state.date.getMonth()+1)}-01`;
+ let res;if(id){delete payload.user_id;delete payload.type;delete payload.done;res=await sb.from('tasks').update(payload).eq('id',id).eq('user_id',user.id)}else{payload.defer_count=0;res=await sb.from('tasks').insert(payload)}if(res.error){alert(res.error.message);return}closeModal();await loadData()}
+function editItem(type,id){let arr=type==='daily'?data.daily:type==='weekly'?data.weekly:data.monthly;let x=arr.find(a=>a.id===id);if(x)addItem(type,x)}
+async function toggleTask(type,id,next){const {error}=await sb.from('tasks').update({done:next,updated_at:new Date().toISOString()}).eq('id',id).eq('user_id',user.id);if(error){alert(error.message);return}await loadData()}
+async function deleteItem(type,id){if(!confirm('이 할 일을 삭제할까요?'))return;const {error}=await sb.from('tasks').delete().eq('id',id).eq('user_id',user.id);if(error){alert(error.message);return}await loadData()}
+async function deferTask(id){let x=data.daily.find(a=>a.id===id);if(!x)return;let old=x.date,newDate=iso(addDays(new Date(old+'T12:00:00'),1));const {error}=await sb.from('tasks').update({date:newDate,defer_count:(x.defer_count||0)+1,deferred_from:old,updated_at:new Date().toISOString()}).eq('id',id).eq('user_id',user.id);if(error){alert(error.message);return}await loadData()}
+function addRoutine(){openModal('아침 루틴 추가',`<div class="form"><input id="rTime" type="time" value="07:00"><input id="rText" placeholder="예: 물 한 잔"><div class="actions"><button class="primary" onclick="saveRoutine()">추가</button></div></div>`)}
+async function saveRoutine(){let time=document.getElementById('rTime').value||'07:00',text=document.getElementById('rText').value.trim();if(!text)return;let max=Math.max(-1,...data.routine.map(r=>r.sort_order||0));const {error}=await sb.from('routines').insert({user_id:user.id,time,text,sort_order:max+1,active:true});if(error){alert(error.message);return}closeModal();await loadData()}
+async function toggleRoutine(id,next){setRoutineDone(id,next);routineDone=routineDoneFor();render()}
+function goToday(){state.tab='today';state.date=new Date();state.weekOffset=0;loadData()}
+
+async function start(){root().innerHTML='<div class="app"><div class="loading">하루하루를 불러오는 중…</div></div>';const {data:s}=await sb.auth.getSession();user=s.session?.user||null;if(!user){authView();return}await loadData()}
+sb.auth.onAuthStateChange((_event,session)=>{user=session?.user||null;if(user)loadData();else authView()});
+start();
 </script>
 </body>
 </html>
